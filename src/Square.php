@@ -12,14 +12,11 @@ class Square extends Line implements EquationInterface
             return parent::line($b, $c);
         }
         $D = $this->searchD($a, $b, $c);
-        MyLog::log("This is quadratic equation\n");
-        MyLog::log('Roots: ');
         if ($D > 0) {
-            MyLog::log((-$b) + sqrt($D)) / (2 * $a);
-            MyLog::log((-$b) - sqrt($D)) / (2 * $a);
+            return $this->x = [(-$b - sqrt($D)) / (2 * $a), (-$b + sqrt($D)) / (2 * $a)];
         }
         if ($D == 0) {
-            MyLog::log(-($b / (2 * $a)));
+            return $this->x = [(-$b - sqrt($D) / (2 * $a))];
 
         }
         if ($D < 0 ){
